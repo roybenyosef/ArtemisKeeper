@@ -1,10 +1,16 @@
 package com.royb.artemiskeeper;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class ArtemisKeeperApplication {
+
+    @Autowired
+    private static ApplicationContext applicationContext;
+
     public static void main(String[] args) {
         SpringApplication.run(ArtemisKeeperApplication.class, args);
         printBanner();
@@ -12,7 +18,7 @@ public class ArtemisKeeperApplication {
     }
 
     private static void initApplication() {
-        WebScrapper webScrapper = new WebScrapper();
+        var webScrapper = applicationContext.getBean(WebScrapper.class);
     }
 
     private static void printBanner() {

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 @Component
@@ -17,17 +18,11 @@ public class WebScrapper {
     @Autowired
     private Config config;
 
-    WebScrapper() {
+    @PostConstruct
+    public void init() {
         logger.info("Initializing web scrapper...");
         for(String url : config.getUrls()) {
             logger.info(url);
         }
-//        try {
-//
-//        }
-//        catch (IOException ex) {
-//            logger.error(ex.getMessage(), ex);
-//        }
     }
-
 }
