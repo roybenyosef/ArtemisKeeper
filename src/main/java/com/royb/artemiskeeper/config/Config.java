@@ -10,6 +10,17 @@ import java.util.List;
 @EnableConfigurationProperties
 @ConfigurationProperties
 public class Config {
+
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private List<String> urls;
 
     public List<String> getUrls() {

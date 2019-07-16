@@ -1,0 +1,14 @@
+spring:
+   profiles: default
+name: artemiskeeper-default
+urls:
+   - https://www.4girls.co.il/community
+
+---
+
+spring:
+   profiles: secondary
+name: artemiskeeper-secondary
+urls:
+   - https://www.4girls.co.il/stam
+
